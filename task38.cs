@@ -3,7 +3,7 @@ double[] GetRandomArray(int size, int MinValue, int MaxValue)
 	double[] result = new double[size];
 	for (int i = 0; i < size; i++)
 	{
-		result[i] = new Random().Next(MinValue, MaxValue + 1);
+		result[i] = new Random().NextDouble() * 100;
 	}
 	return result;
 }
@@ -25,4 +25,4 @@ int UserSize = int.Parse(Console.ReadLine());
 double[] RandArray = GetRandomArray(UserSize, 0, 999);
 Console.WriteLine(String.Join(",", RandArray));
 double rez = MaxEl(RandArray) - MinEl(RandArray);
-Console.WriteLine($"Max - min is {rez}");
+Console.WriteLine($"Max - min is {Math.Round(rez, 2)}");
